@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Article.destroy_all
+10.times do
+  rand_article = Article.new(
+    title: Faker::Hipster.sentence,
+    content: Faker::Hipster.paragraph,
+  )
+  rand_article.save!
+end
+
